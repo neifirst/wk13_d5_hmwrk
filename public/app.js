@@ -4,9 +4,7 @@ window.onload = function(){
 
   var updateView = function() {
     var runningTotal = document.querySelector('#running_total');
-    if (calculator.runningTotal === Infinity) {
-      runningTotal.value = 'ERROR';
-    }
+    calculator.runningTotal = isFinite(calculator.runningTotal) ? calculator.runningTotal : 0;
     runningTotal.value = calculator.runningTotal;
   };
 
